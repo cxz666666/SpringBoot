@@ -32,6 +32,11 @@ public class DemoApplication {
         return new ActiveMQTopic("video.topic");
     }
 
+    /**
+     * 同时支持点对点和订阅消息发布
+     * @param activeMQConnectionFactory
+     * @return
+     */
     @Bean
     public JmsListenerContainerFactory<?> jmsListenerContainerTopic(ConnectionFactory activeMQConnectionFactory){
         DefaultJmsListenerContainerFactory bean = new DefaultJmsListenerContainerFactory();

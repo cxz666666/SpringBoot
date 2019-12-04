@@ -16,13 +16,21 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+        <rocketmq.version>4.1.0-incubating</rocketmq.version>
 	</properties>
 
 	<dependencies>
+        <!--非响应式编程-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+        <!--响应式编程-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
+        <!--</dependency>-->
 
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -48,28 +56,49 @@
 		</dependency>
 
         <!-- ES搜索开始 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+        <!--</dependency>-->
         <!-- ES搜索结束 -->
+
         <!-- ActiveMQ开始 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
-        <!-- 配置线程池加入 -->
-        <!-- springboot2.1以上版本 -->
-        <dependency>
-            <groupId>org.messaginghub</groupId>
-            <artifactId>pooled-jms</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-activemq</artifactId>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; 配置线程池加入 &ndash;&gt;-->
+        <!--&lt;!&ndash; springboot2.1以上版本 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.messaginghub</groupId>-->
+            <!--<artifactId>pooled-jms</artifactId>-->
+        <!--</dependency>-->
         <!-- springboot2.0及以下版本 -->
         <!--<dependency>-->
             <!--<groupId>org.apache.activemq</groupId>-->
             <!--<artifactId>activemq-pool</artifactId>-->
         <!--</dependency>-->
         <!-- ActiveMQ结束 -->
+
+        <!-- rocketmq开始 -->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.rocketmq</groupId>-->
+            <!--<artifactId>rocketmq.client</artifactId>-->
+            <!--<version>${rocketmq.version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.rocketmq</groupId>-->
+            <!--<artifactId>rocketmq.commen</artifactId>-->
+            <!--<version>${rocketmq.version}</version>-->
+        <!--</dependency>-->
+        <!-- rocketmq结束 -->
+
+        <!--springBoot监控依赖开始-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
+        <!--</dependency>-->
+        <!--springBoot监控依赖结束-->
     </dependencies>
 
 	<build>

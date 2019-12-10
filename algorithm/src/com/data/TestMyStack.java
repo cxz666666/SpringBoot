@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * @PackageName: com.data
  * @ClassName: TestMyStack
- * @Description:
+ * @Description: 测试栈
  * @author: cxz
  * @date 2019/12/9 17:09
  */

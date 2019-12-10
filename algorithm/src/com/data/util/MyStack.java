@@ -3,7 +3,7 @@ package com.data.util;
 /**
  * @PackageName: com.data.util
  * @ClassName: MyStack
- * @Description:
+ * @Description: 栈
  * @author: cxz
  * @date 2019/12/9 16:58
  */

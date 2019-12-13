@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{3, 5, 7, 2, 9, 4, 1, 0, 5, 7};
+        int[] arr = new int[]{5, 3, 2, 9, 4, 1, 0, 6, 8, 7, 5};
         System.out.println(arr.length);
         quickSort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
@@ -25,18 +25,18 @@ public class QuickSort {
      * @param end 结束下标
      */
     public static void quickSort(int[] arr, int start, int end) {
+
         if (start < end) {
-            //获取基准数
             int stard = arr[start];
-            //开始值
             int low = start;
             int high = end;
-            while (low < high) {
-                while (low < high && stard <= arr[high]) {
+            while (high > low) {
+                //stard <= arr[high],排序的数组中有相同数时必须加上等于号否则不成功
+                while (high > low && stard <= arr[high]) {
                     high--;
                 }
                 arr[low] = arr[high];
-                while (low < high && stard > arr[low]) {
+                while (high > low && stard > arr[low]) {
                     low++;
                 }
                 arr[high] = arr[low];
@@ -45,6 +45,27 @@ public class QuickSort {
             quickSort(arr, start, low);
             quickSort(arr, low + 1, end);
         }
+
+//        if (start < end) {
+//            //获取基准数
+//            int stard = arr[start];
+//            //开始值
+//            int low = start;
+//            int high = end;
+//            while (low < high) {
+//                while (low < high && stard <= arr[high]) {
+//                    high--;
+//                }
+//                arr[low] = arr[high];
+//                while (low < high && stard > arr[low]) {
+//                    low++;
+//                }
+//                arr[high] = arr[low];
+//                arr[low] = stard;
+//            }
+//            quickSort(arr, start, low);
+//            quickSort(arr, low + 1, end);
+//        }
 //        if (start < end) {
 //            //把数组中的第0个作为标准数
 //            int stard = arr[start];

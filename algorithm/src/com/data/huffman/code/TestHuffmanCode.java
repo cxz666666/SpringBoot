@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * @PackageName: com.data.huffman.code
  * @ClassName: TestHuffmanCode
- * @Description:
+ * @Description: 赫夫曼编码
  * @author: cxz
  * @date 2019/12/25 9:59
  */
@@ -21,11 +21,35 @@ public class TestHuffmanCode {
 //        System.out.println(new String(newBytes));
         String src = "1.DMP";
         String dst = "2.zip";
+//        try {
+//            zipFile(src, dst);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
         try {
-            zipFile(src, dst);
-        } catch (IOException e) {
+            unZip("2.zip","s.DMP");
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static void unZip(String src, String dst) throws Exception {
+        //创建一个输入流
+        InputStream is = new FileInputStream("2.zip");
+        ObjectInputStream ois = new ObjectInputStream(is);
+        //读取byte数组
+        byte[] b = (byte[]) ois.readObject();
+        //读取赫夫曼编码表
+        Map<Byte, String> codes = (Map<Byte, String>) ois.readObject();
+        ois.close();
+        is.close();
+        //解码
+        byte[] bytes = decode(codes, b);
+        //创建一个输出流
+        OutputStream os = new FileOutputStream(dst);
+        //写入数据
+        os.write(bytes);
+        os.close();
     }
 
     /**

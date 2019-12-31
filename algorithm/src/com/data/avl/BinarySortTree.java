@@ -1,11 +1,11 @@
-package com.data.tree;
+package com.data.avl;
 
 /**
- * @PackageName: com.data.tree
+ * @PackageName: com.data.avl
  * @ClassName: BinarySortTree
- * @Description: 二叉排序树
+ * @Description: 平衡二叉树
  * @author: cxz
- * @date 2019/12/26 15:14
+ * @date 2019/12/26 15:32
  */
 public class BinarySortTree {
     BinarySortNode root;
